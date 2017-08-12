@@ -1,0 +1,150 @@
+/* reset */
+/* 样式重置 */
+.date-module-main span,
+.date-module-main th {
+	cursor: default;
+}
+.date-module-main td {cursor: pointer; padding: 0;}
+
+/* 模块css */
+.date-module-main {
+	position: absolute;
+	/* box-sizing: border-box; */
+	width: 300px;
+	box-shadow: 0 0 2px 2px hsla(0, 50%, 10%, 0.1);
+	display: none;
+	opacity: 0;
+	/* border: 1px solid hsla(0, 50%, 10%, 0.2); */
+}
+.date-module-show {display: block; opacity: 1;}
+
+/* 模块头部css */
+.date-module-header {
+	height: 50px;
+	width: 100%;
+	background: #3ebf81;
+	text-align: center;
+	color: #fff;
+}
+	/* 日期顶部按钮 */
+.date-module-button {
+	position: relative;
+	height: 30px;
+	margin-top: 10px;
+	width: 30px;
+	font-size: 20px;
+	border: none;
+	border-radius: 50%;
+	background: transparent;
+	color: inherit;
+	overflow: hidden;
+	outline: none;
+	cursor: pointer;
+}
+
+/* 顶部按钮点击响应动画 */
+.date-module-button::after {
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	display: block;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	background: #48e49a;
+	border-radius: 50%;
+	opacity: 0;
+	transition: all 0.6s;
+}
+.date-module-button-prev::after {
+	content: '<';
+}
+.date-module-button-next::after {
+	content: '>';
+}
+.date-module-button:active::after {
+	content: '';
+	width: 0px;
+	height: 0px;
+	left: 15px;
+	top: 15px;
+	opacity: 1;
+	transition-duration: 0s: 
+}
+/* 顶部按钮响应动画结束 */
+
+.date-module-button-prev {
+	float: left;
+	margin-left: 20px;
+}
+.date-module-button-next {
+	float: right;
+	margin-right: 20px;
+}
+/* 日期顶部显示 */
+.date-module-title {
+	font-size: 28px;
+	line-height: 50px;
+}
+
+/* ************ */
+/* 日期显示主体 */
+/* ************ */
+.date-module-body {
+	width: 100%;
+}
+.date-module-table {
+	width: 280px;
+	margin: 0 auto;
+	text-align: center;
+	color: #3ebf81;
+	border-collapse: collapse;
+}
+.date-module-week {
+	/* border-bottom: 1px solid #f7f7f7; */
+}
+.date-module-week th {font-weight: 300; padding: 0;}
+/* 每个格子大小 */
+.date-module-week th,
+.date-module-day td {
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+}
+/* 非本月日子显示灰色 */
+.date-module-day-gray {
+	color: #ddd;
+}
+/* 选中日期样式 */
+.date-module-day-active {
+	background: #3ebf81;
+	color: #fff;
+}
+
+/* 日期点击响应动画 */
+.date-module-day td {
+	position: relative;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.date-module-day td::after {
+	position: absolute;
+	display: block;
+	content: '';
+	width: 40px;
+	height: 40px;
+	left: 0;
+	top: 0;
+	border-radius: 50%;
+	background: #48e49a;
+	opacity: 0;
+	transition: all 0.5s;
+}
+.date-module-day td:active::after {
+	width: 0;
+	height: 0;
+	top: 20px;
+	left: 20px;
+	opacity: 1;
+	transition-duration: 0;
+}
