@@ -67,8 +67,8 @@
 		var prevMonth_lastDay = prevMonth_lastDayData.getDate();
 
 		// 获取下个月的信息
-		var nextMonth_firstDayData = new Date(year, month, 1);
-		var nextMonth_firstDay = nextMonth_firstDayData.getDate();
+		// var nextMonth_firstDayData = new Date(year, month, 1);
+		// var nextMonth_firstDay = nextMonth_firstDayData.getDate();
 
 		// 计算在当前月份中需要显示多少上月份的天数
 		// 这里的计算方式需要依据日期显示界面(UI)的布局来区分

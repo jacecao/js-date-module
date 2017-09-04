@@ -118,6 +118,8 @@
 		this.date = {year: date_info.baseYear, month: date_info.baseMonth};
 		// 执行页面渲染
 		this.renderHTML();
+		// 注意这里一定位于渲染函授执行后
+		// this.date_ele是在渲染函数中赋值的
 		var dateBox = this.date_ele;
 		// 获取触发元素
 		var ele = document.querySelector(obj.element);
@@ -147,6 +149,8 @@
 		this.date_ele.addEventListener('click', function (e) {
 			var ele_active = e.target;
 			// 获取上一月信息
+			// classList 是一个HTML5新接口
+			// 获取当前元素的‘类’列表
 			if (ele_active.classList.contains('date-module-button-prev')) {
 				datepicker.renderHTML('prev');
 			}
@@ -157,6 +161,8 @@
 			// 获取制定的日期，即点击一个日期时，获取到该日期的完整年月日信息
 			var tagname = ele_active.tagName.toLowerCase();
 			if (tagname === 'td') {
+				// 标签元素的dataset属性是HTML5新接口
+				// 主要就是获取ele.dataset返回的是对象，对象含该元素中data-属性、值
 				var attr_data = ele_active.dataset.index;
 				// console.log(datepicker.dateData[attr_data]);
 				// 获取到点击日期中自定义data-index中的序列值
