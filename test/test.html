@@ -7,22 +7,29 @@
 	<style>
 		.date {width: 294px; height: 30px;}
 		.date:focus {outline: thin solid #3ebf81;}
-
+		
 		.test-red {color: blue;}
+
+		.date-module-button {
+			border: 1px solid #ddd;
+			height: 30px;
+			width: 30px;
+		}
 	</style>
 </head>
 <body>
-	<input class="date" type="text">
-	<script src="./datemodule/js/date.js"></script>
-	<script src="./datemodule/js/render.js"></script>
+	<!-- <input class="date" type="text"> -->
+	<button class="date-module-button">test</button>
+	<!-- <script src="./datemodule/js/date.js"></script> -->
+	<!-- <script src="./datemodule/js/render.js"></script> -->
 	<script>
 
-		datepicker.init({element: '.date'});
+		// datepicker.init({element: '.date'});
 
 		var but = document.querySelector('.date-module-button');
 		but.addEventListener('click', function () {
 			console.log(this.classList);
-			this.classList.toggle('.test-red');
+			this.classList.toggle('date-module-button-active');
 		}, false);
 	</script>
 </body>

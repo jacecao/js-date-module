@@ -58,7 +58,7 @@
 	height: inherit;
 	background: #48e49a;
 	border-radius: 50%;
-	animation: scaleout 1s infinite;
+	animation: scaleout 0.5s infinite;
 }
 @keyframes scaleout {
 	0% {
@@ -125,7 +125,23 @@
 	border-radius: 50%;
 	overflow: hidden;
 }
-.date-module-day td::after {
+.date-module-day td.active::after {
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: inherit;
+	background: #48e49a;
+	border-radius: 50%;
+	animation: scaleout 0.5s infinite;
+}
+
+/* 以下代码在v1版本中被剔除，原因是在不同版本中浏览器响应不够完美 
+	将采用JS来添加类名实现点击动画
+*/
+/* .date-module-day td::after {
 	position: absolute;
 	display: block;
 	content: '';
@@ -137,12 +153,12 @@
 	background: #48e49a;
 	opacity: 0;
 	transition: all 0.5s;
-}
-.date-module-day td:active::after {
+} */
+/* .date-module-day td:active::after {
 	width: 0;
 	height: 0;
 	top: 20px;
 	left: 20px;
 	opacity: 1;
 	transition-duration: 0;
-}
+} */

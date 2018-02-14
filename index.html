@@ -14,16 +14,9 @@
 <body>
 	<input class="date" type="text">
 	<script src="./datemodule/js/date.js"></script>
-	<script src="./datemodule/js/render.js"></script>
+	<script src="./datemodule/js/render-v1.js"></script>
 	<script>
-
 		datepicker.init({element: '.date'});
-
-		var but = document.querySelector('.date-module-button');
-		but.addEventListener('click', function () {
-			console.log(this.classList);
-			this.classList.toggle('.test-red');
-		}, false);
 	</script>
 </body>
 </html>
