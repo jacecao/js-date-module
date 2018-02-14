@@ -148,6 +148,7 @@
 		// 为日历容器添加事件监听（这里采用事件代理机制）
 		this.date_ele.addEventListener('click', function (e) {
 			var ele_active = e.target;
+			// console.log(ele_active);
 			// 获取上一月信息
 			// classList 是一个HTML5新接口
 			// 获取当前元素的‘类’列表
